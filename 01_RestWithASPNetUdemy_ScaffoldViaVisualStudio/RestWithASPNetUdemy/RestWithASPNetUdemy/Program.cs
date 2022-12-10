@@ -1,8 +1,13 @@
+using RestWithASPNetUdemy.Services;
+using RestWithASPNetUdemy.Services.Implementation;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
 
 var app = builder.Build();
 
